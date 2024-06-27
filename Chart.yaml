@@ -1,0 +1,34 @@
+annotations:
+  category: Infrastructure
+  licenses: Apache-2.0
+  images: |
+    - name: rabbitmq
+      image: tds-rabbitmq-oci-prod-local.usw1.packages.broadcom.com/rabbitmq/vmware-tanzu-rabbitmq:3.13.3
+    - name: rabbitmq-cluster-operator
+      image: docker.io/rabbitmqoperator/cluster-operator:2.9.0
+    - name: rmq-default-credential-updater
+      image: docker.io/rabbitmqoperator/default-user-credential-updater:1.0.4
+    - name: rmq-messaging-topology-operator
+      image: docker.io/rabbitmqoperator/messaging-topology-operator:1.14.2
+apiVersion: v2
+appVersion: 2.9.0
+dependencies:
+- name: common
+  repository: oci://registry-1.docker.io/bitnamicharts
+  tags:
+  - bitnami-common
+  version: 2.x.x
+description: The Tanzu RabbitMQ Kubernetes Cluster Operator automates provisioning, management, and operations of RabbitMQ clusters running on Kubernetes.
+home: https://tanzu.vmware.com/rabbitmq
+keywords:
+- rabbitmq
+- operator
+- infrastructure
+- message queue
+- AMQP
+kubeVersion: '>= 1.19.0-0'
+maintainers:
+- name: Broadcom, Inc. All Rights Reserved.
+  url: https://docs.vmware.com/en/VMware-Tanzu-RabbitMQ/index.html
+name: rabbitmq-cluster-operator
+version: 0.1.0
